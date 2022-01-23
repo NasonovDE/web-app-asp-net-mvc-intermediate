@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ArrayOfXmlCinema>
+  <XmlCinema>
+    <Id>1</Id>
+    <CinemaPlace>Красный</CinemaPlace>
+    <NumberOfBilets>100</NumberOfBilets>
+    <QRcode>QRcodeYes</QRcode>
+  </XmlCinema>
+  <XmlCinema>
+    <Id>3</Id>
+    <CinemaPlace>Факел</CinemaPlace>
+    <NumberOfBilets>150</NumberOfBilets>
+    <QRcode>QRcodeNo</QRcode>
+  </XmlCinema>
+  <XmlCinema>
+    <Id>4</Id>
+    <CinemaPlace>U-city</CinemaPlace>
+    <NumberOfBilets>50</NumberOfBilets>
+    <QRcode>QRcodeYes</QRcode>
+  </XmlCinema>
+</ArrayOfXmlCinema>

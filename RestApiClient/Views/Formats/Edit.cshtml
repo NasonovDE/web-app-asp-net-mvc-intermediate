@@ -1,0 +1,24 @@
+﻿@using RestApiClient.Models
+@model Format
+
+
+@{
+    Layout = null;
+    var controllerName = "Formats";
+    var actionName = "Edit";
+    var enctype = "multipart/form-data";
+}
+    <font color=" black">
+        <h2>Формат</h2>
+        <h5>Пожалуйста, заполните необходимые поля</h5>
+
+
+        @using (Html.BeginForm(actionName, controllerName, FormMethod.Post, new { @enctype = enctype }))
+        {
+            
+            @Html.EditorForModel()
+
+            <button class="btn btn-primary" onclick="Post('@controllerName','@actionName')">Сохранить</button>
+            @Html.ActionLink("Отменить", "Index", controllerName, null, new { @class = "btn btn-danger" })
+        }
+    </font>

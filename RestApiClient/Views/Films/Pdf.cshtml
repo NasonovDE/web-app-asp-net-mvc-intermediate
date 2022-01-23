@@ -1,0 +1,91 @@
+﻿@using RestApiClient.Models
+@using Common.Extentions;
+@model Film
+
+@{
+    Layout = null;
+}
+    <style type="text/css">
+        h1,h2 {
+            font-size: 120%;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            color: black;
+        }
+
+        span {
+            font-size: 100%;
+            font-family: 'Times New Roman', Arial, Helvetica, sans-serif;
+            color: black;
+        }
+    </style>
+    <html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+        <style>
+        </style>
+    </head>
+    <font color="black">
+        <body>
+            <table class = "table table-dark table-striped table-hover table-bordered border-dark  align-middle ">
+
+                <tbody>
+                    <tr>
+                        <td rowspan="2">
+                            <img src="/Films/GetImage/@Model.Id" style="max-width: 600px; max-height: 600px; border: 1px solid #000000;" />
+                        </td>
+
+                        <td style="text-align:center">
+                            <h1><u>@($"{Model.NameFilm}  {Model.FilmYears.GetDisplayValue()}")</u></h1>
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td>
+
+                            <p>
+                                <span><b>Описание фильма</b></span>
+                                <span>@Model.FilmDescription</span>
+                            </p>
+                                            
+                            <p>
+                                <span><b>Актеры:</b></span>
+                                <span>@Model.FilmAllActors</span>
+                            </p>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" style="text-align:center">
+                            <h1><u>Дополнительная информация</u></h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <span>@Model.FilmDop</span>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+
+
+
+
+            <hr />
+
+
+            <sub><i>Информация из государственного реестра</i></sub>
+
+
+        </body>
+    </font>
+    </html>

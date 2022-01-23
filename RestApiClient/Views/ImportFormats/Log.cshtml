@@ -1,0 +1,13 @@
+﻿@using RestApiClient.Models
+@using Common.Models
+@model ImportFormatLog
+
+<h3>Лог импорта форматов</h3>
+
+
+@Html.EditorForModel()
+<div class="btn-create">
+    @Html.ActionLink("На главную", "Index", "Kinos", null, new { @class = "btn btn-dark" })
+    @Html.ActionLink("Назад", "Index", "Formats", null, new { @class = "btn btn-dark" })
+
+</div>

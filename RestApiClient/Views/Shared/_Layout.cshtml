@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Афиша</title>
+    <link href="~/Content/MvcGrid/mvc-grid.css" rel="stylesheet">
+
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+
+    <div >
+        
+           
+            <nav class="navbar-expand-lg navbar-light bg-black">
+                <div class="container">
+                    <div class="collapse navbar-collapse">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a href="/Kinos" class="nav-link text-white  fs-4">Расписание</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/Films" class="nav-link text-white  fs-4">Фильмы</a>
+                            </li>
+                            @if (User.IsInRole("Administrator"))
+                            {
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-white fs-4" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Кинотеатры
+                                    </a>
+                                    <ul class="dropdown-menu" style="background-color: #000; border: 1px solid; color:#fff;" aria-labelledby="navbarScrollingDropdown">
+                                        <li><a id="linkRed" class="dropdown-item text-white" href="/Cinemas">Кинотеатры</a></li>
+                                        
+                                        <li><a id="linkRed" class="dropdown-item text-white" href="/ImportXmlCinemas">Импорт Xml</a></li>
+
+                                    </ul>
+                                </li>
+                            }
+                            else { 
+                            <li class="nav-item">
+                                <a href="/Cinemas" class="nav-link text-white  fs-4">Кинотеатры</a>
+                            </li>}
+                            @if (User.IsInRole("Administrator"))
+                            {
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-white fs-4" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Форматы
+                                    </a>
+                                    <ul class="dropdown-menu" style="background-color: #000; border: 1px solid; color:#fff;" aria-labelledby="navbarScrollingDropdown">
+                                        <li><a id="linkRed" class="dropdown-item text-white" href="/Formats">Форматы</a></li>
+                                        <li><a id="linkRed" class="dropdown-item text-white" href="/ImportFormats">Импорт Excel</a></li>
+                                        <li><a id="linkRed" class="dropdown-item text-white" href="/ImportXmlFormats">Импорт Xml</a></li>
+
+                                    </ul>
+                                </li>
+                            }
+
+                            @if (User.IsInRole("Administrator"))
+                            {
+                                <li class="nav-item">
+                                    <a href="/Settings" class="nav-link text-white fs-4">Настройки</a>
+                                </li>
+                            }
+
+
+
+                        </ul>
+                        @Html.Partial("_LoginPartial")
+                    </div>
+                </div>
+            </nav>
+
+            </div>
+      
+       
+
+
+    <div class="container body-content">
+        @RenderBody()
+
+    </div>
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/MvcGrid/mvc-grid.js"></script>
+    <script>
+        [].forEach.call(document.getElementsByClassName('mvc-grid'), function (element) {
+            new MvcGrid(element);
+        });
+    </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<ArrayOfXmlFormat>
+  <XmlFormat>
+    <Id>0</Id>
+    <Name>IMAX 3D</Name>
+  </XmlFormat>
+  <XmlFormat>
+    <Id>0</Id>
+    <Name>3D</Name>
+  </XmlFormat>
+  <XmlFormat>
+    <Id>0</Id>
+    <Name>2D</Name>
+  </XmlFormat>
+</ArrayOfXmlFormat>

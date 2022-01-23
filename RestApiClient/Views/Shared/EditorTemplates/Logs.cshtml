@@ -1,0 +1,17 @@
+﻿@model List<RestApiClient.Models.ImportFormatRowLog>
+
+<table class="table table-dark table-striped table-hover table-bordered border-dark  align-middle " >
+    <tr>
+        <td>№п/п</td>
+        <td>Статус</td>
+        <td>Сообщение</td>
+    </tr>
+    @foreach (var value in Model)
+    {
+        <tr>
+            <td>@value.Id</td>
+            <td>@value.Type</td>
+            <td>@value.Message</td>
+        </tr>
+    }
+</table>
